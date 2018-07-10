@@ -1,0 +1,11 @@
+Content-Length: 164
+
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "initialize",
+  "params": {
+    "rootUri": "file:///home/Users/asial/workspace",
+    "capabilities": {}
+  }
+}

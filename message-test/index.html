@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script type="text/javascript" src="messages.js"></script>
+  <script type="text/javascript">
+    const sock = new WebSocket('ws://localhost:2089');
+    
+    sock.addEventListener('message', function (event) {
+      const reader = new FileReader();
+      reader.onload = function () { console.log(JSON.parse(reader.result)); };
+      reader.readAsText(event.data);
+    });
+
+    function run_messsage(message) {
+      sock.send(message);
+    }
+  </script>
+</head>
+<body>
+  <h1>Testing messages</h1>
+
+  <p>From this page you can manually send messages to the language server over WebSocket.<p>
+
+  <p>To do this:</p>
+
+  <ol>
+    <li>Make sure the language server, beheader, and websockify are all running.</li>
+    <li>Make sure you already ran run-message-test.sh if you made any changes in the messages directory.</li>
+    <li>Open the console.</li>
+    <li>Call the function <code>run_message</code>. It takes a message name as a parameter. The message name corresponds
+    to the filename of the message in the messages directory e.g. <code>run_commmand(initialize)</code>. All the
+    available messages are defined in <a href="messages.js">./message-test/messages.js</a>.</li>
+    <li>If the server sends a response, it should be printed in the console. You should also see it in the output of
+    run-language-server.sh.</li>
+  </ol>
+
+  <p>Example:</p>
+
+  <pre>
+  > run_messsage(initialize)
+  undefined
+  index.html:11 {jsonrpc: "2.0", id: 1, result: {…}}
+  > run_messsage(initialized)
+  undefined
+  > run_messsage(shutdown)
+  undefined
+  index.html:11 {jsonrpc: "2.0", id: 1, result: null}
+  > run_messsage(exit)
+  undefined
+  </pre>
+</body>
+</html>

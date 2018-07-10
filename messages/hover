@@ -1,0 +1,16 @@
+Content-Length: 252
+
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "textDocument/hover",
+  "params": {
+    "textDocument": {
+      "uri": "file:///Users/asial/workspace/hello_world.js"
+    },
+    "position": {
+      "line": 8,
+      "character": 9
+    }
+  }
+}

@@ -1,0 +1,13 @@
+Content-Length: 231
+
+{
+  "jsonrpc": "2.0",
+  "method": "textDocument/didOpen",
+  "params": {
+    "textDocument": {
+      "uri": "file:///Users/asial/workspace/hello_world.js",
+      "languageId": "javascript",
+      "version": 0
+    }
+  }
+}

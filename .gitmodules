@@ -1,0 +1,12 @@
+[submodule "vscode-ws-jsonrpc"]
+	path = vscode-ws-jsonrpc
+	url = git@github.com:emccorson/vscode-ws-jsonrpc
+[submodule "monaco-languageclient"]
+	path = monaco-languageclient
+	url = git@github.com:emccorson/monaco-languageclient
+[submodule "websockify"]
+	path = websockify
+	url = git@github.com:novnc/websockify.git
+[submodule "javascript-typescript-langserver"]
+	path = javascript-typescript-langserver
+	url = git@github.com:sourcegraph/javascript-typescript-langserver
