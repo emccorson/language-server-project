@@ -51,11 +51,25 @@ There are four parts to the project:
 Building
 ========
 
-1. `git submodule init && git submodule update`
-2. `cd websockify/other/js && npm install`
-3. `cd javascript-typescript-langserver && npm install && npm run build`
-4. `cd vscode-ws-jsonrpc && npm install`
-5. `cd monaco-languageclient && npm install && cd example && npm install`
+    git submodule init && git submodule update
+
+    pushd websockify/other/js
+    npm install
+    popd
+
+    pushd javascript-typescript-langserver 
+    npm install && npm run build
+    popd
+
+    pushd vscode-ws-jsonrpc
+    npm install
+    popd
+
+    pushd monaco-languageclient
+    npm install
+    pushd example && npm install
+    popd
+    popd
 
 
 Running
